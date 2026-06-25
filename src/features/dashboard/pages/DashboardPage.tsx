@@ -11,7 +11,7 @@ export default function DashboardPage() {
           Dashboard
         </Typography>
         <Typography variant="body2" color="text.secondary" mt={0.5}>
-          Bienvenido, {usuario?.nombre}
+          Bienvenido, {usuario?.nombreCompleto}
         </Typography>
       </Box>
 

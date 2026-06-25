@@ -20,7 +20,12 @@ export function Topbar() {
   const [anchor, setAnchor] = useState<null | HTMLElement>(null);
 
   const initials = usuario
-    ? `${usuario.nombre[0]}${usuario.apellido[0]}`.toUpperCase()
+    ? usuario.nombreCompleto
+        .split(" ")
+        .slice(0, 2)
+        .map((p) => p[0])
+        .join("")
+        .toUpperCase()
     : "?";
 
   return (
@@ -29,7 +34,7 @@ export function Topbar() {
         <Box className="flex items-center gap-2">
           <Box className="text-right">
             <Typography variant="body2" fontWeight={600} lineHeight={1.2}>
-              {usuario?.nombre} {usuario?.apellido}
+              {usuario?.nombreCompleto}
             </Typography>
             <Typography variant="caption" color="text.secondary">
               {usuario?.rol}
@@ -61,10 +66,10 @@ export function Topbar() {
         >
           <Box className="px-4 py-2">
             <Typography variant="body2" fontWeight={600}>
-              {usuario?.nombre} {usuario?.apellido}
+              {usuario?.nombreCompleto}
             </Typography>
             <Typography variant="caption" color="text.secondary">
-              {usuario?.email}
+              {usuario?.correo}
             </Typography>
           </Box>
           <Divider />
