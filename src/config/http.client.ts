@@ -37,7 +37,7 @@ httpClient.interceptors.response.use(
                     `${import.meta.env.VITE_API_URL ?? "/api"}/auth/refresh`,
                     { refreshToken }
                 );
-                const newToken = data.data.accessToken;
+                const newToken = data.datos.accessToken;
                 tokenStorage.setAccessToken(newToken);
                 original.headers.Authorization = `Bearer ${newToken}`;
                 return httpClient(original);

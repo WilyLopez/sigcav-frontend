@@ -9,12 +9,12 @@ import type {
 export const authApi = {
   login: async (data: LoginRequest) => {
     const res = await httpClient.post<ApiResponse<TokenResponse>>("/auth/login", data);
-    return res.data.data;
+    return res.data.datos;
   },
 
   refresh: async (data: RefreshTokenRequest) => {
     const res = await httpClient.post<ApiResponse<TokenResponse>>("/auth/refresh", data);
-    return res.data.data;
+    return res.data.datos;
   },
 
   logout: async () => {
