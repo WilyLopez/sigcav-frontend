@@ -30,7 +30,7 @@ export function PublicOnlyRoute() {
 
     if (isAuthenticated && usuario) {
         const destino =
-            usuario.rol === "ADMINISTRADOR" ? "/admin/dashboard" : "/asistente/dashboard";
+            usuario.rol === "ADMINISTRADOR" ? "/admin/bienvenida" : "/asistente/bienvenida";
         return <Navigate to={destino} replace />;
     }
 

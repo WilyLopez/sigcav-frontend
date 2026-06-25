@@ -17,9 +17,9 @@ export const useLogin = () => {
 
       const rol = response.usuario.rol;
       if (rol === "ADMINISTRADOR") {
-        navigate("/admin/dashboard", { replace: true });
+        navigate("/admin/bienvenida", { replace: true });
       } else if (rol === "ASISTENTE_ADMINISTRATIVO") {
-        navigate("/asistente/dashboard", { replace: true });
+        navigate("/asistente/bienvenida", { replace: true });
       }
     },
   });

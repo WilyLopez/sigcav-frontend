@@ -19,6 +19,7 @@ const router = createBrowserRouter([
                         path: "/admin",
                         lazy: () => import("@layouts/AdminLayout").then((m) => ({ Component: m.AdminLayout })),
                         children: [
+                            { path: "bienvenida", lazy: () => import("@features/dashboard/pages/AdminWelcomePage").then((m) => ({ Component: m.default })) },
                             { path: "dashboard", lazy: () => import("@features/dashboard/pages/DashboardPage").then((m) => ({ Component: m.default })) },
                         ],
                     },
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
                         path: "/asistente",
                         lazy: () => import("@layouts/AssistantLayout").then((m) => ({ Component: m.AssistantLayout })),
                         children: [
+                            { path: "bienvenida", lazy: () => import("@features/dashboard/pages/AsistenteWelcomePage").then((m) => ({ Component: m.default })) },
                             { path: "dashboard", lazy: () => import("@features/dashboard/pages/DashboardPage").then((m) => ({ Component: m.default })) },
                         ],
                     },
