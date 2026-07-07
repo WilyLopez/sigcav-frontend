@@ -32,25 +32,26 @@ export function Sidebar({ basePath, rol }: SidebarProps) {
           sx={{
             width: 32,
             height: 32,
-            borderRadius: "8px",
-            bgcolor: "primary.main",
+            borderRadius: "10px",
+            background: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            boxShadow: "0 2px 8px rgba(79, 70, 229, 0.25)",
           }}
         >
           <Typography sx={{ color: "#fff", fontWeight: 800, fontSize: 13 }}>
             SG
           </Typography>
         </Box>
-        <Typography variant="h6" fontWeight={700} letterSpacing={-0.3}>
+        <Typography variant="h6" fontWeight={800} letterSpacing={-0.5} sx={{ color: "text.primary" }}>
           SIGCAV
         </Typography>
       </Box>
 
-      <Divider />
+      <Divider sx={{ opacity: 0.6 }} />
 
-      <Box className="flex flex-col flex-1 overflow-y-auto py-2 px-2">
+      <Box className="flex flex-col flex-1 overflow-y-auto py-3 px-3">
         <List disablePadding>
           {items.map(({ label, path, Icon }) => {
             const fullPath = `/${basePath}/${path}`;
@@ -61,25 +62,28 @@ export function Sidebar({ basePath, rol }: SidebarProps) {
                 key={path}
                 onClick={() => navigate(fullPath)}
                 sx={{
-                  borderRadius: 2,
+                  borderRadius: "10px",
                   mb: 0.5,
-                  px: 1.5,
-                  py: 1,
+                  px: 2,
+                  py: 1.2,
                   bgcolor: isActive ? "primary.light" : "transparent",
                   color: isActive ? "primary.main" : "text.secondary",
+                  transition: "all 0.2s ease-in-out",
                   "&:hover": {
-                    bgcolor: isActive ? "primary.light" : "neutral.100",
+                    bgcolor: isActive ? "primary.light" : "rgba(79, 70, 229, 0.04)",
+                    color: isActive ? "primary.main" : "text.primary",
+                    transform: "translateX(4px)",
                   },
                 }}
               >
-                <ListItemIcon sx={{ minWidth: 36, color: "inherit" }}>
+                <ListItemIcon sx={{ minWidth: 32, color: "inherit" }}>
                   <Icon fontSize="small" />
                 </ListItemIcon>
                 <ListItemText
                   primary={label}
                   primaryTypographyProps={{
                     fontSize: 14,
-                    fontWeight: isActive ? 600 : 400,
+                    fontWeight: isActive ? 600 : 500,
                   }}
                 />
               </ListItemButton>

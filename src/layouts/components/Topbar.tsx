@@ -36,7 +36,7 @@ export function Topbar() {
             <Typography variant="body2" fontWeight={600} lineHeight={1.2}>
               {usuario?.nombreCompleto}
             </Typography>
-            <Typography variant="caption" color="text.secondary">
+            <Typography variant="caption" color="text.secondary" fontWeight={500}>
               {usuario?.rol}
             </Typography>
           </Box>
@@ -44,11 +44,12 @@ export function Topbar() {
           <IconButton onClick={(e) => setAnchor(e.currentTarget)} size="small">
             <Avatar
               sx={{
-                width: 34,
-                height: 34,
-                bgcolor: "primary.main",
+                width: 36,
+                height: 36,
+                background: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)",
                 fontSize: 13,
                 fontWeight: 700,
+                boxShadow: "0 2px 8px rgba(79, 70, 229, 0.2)",
               }}
             >
               {initials}
